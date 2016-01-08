@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-def index
+  def index
     render json: Item.all.order(:created_at)
   end
 
@@ -29,6 +29,6 @@ def index
   private
 
   def item_params
-    params.require(:item).permit(:name)
+    params.require(:item).permit(:name, :price, :category, :quantity)
   end
 end
